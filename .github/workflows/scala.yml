@@ -18,13 +18,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Java and sbt
+      - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: '11'
-          cache: 'sbt'
-      - uses: sbt/setup-sbt@v1
+      - name: Set up sbt
+        uses: sbt/setup-sbt@v1
         with:
           sbt-runner-version: 1.10.11
       - name: Compile code
