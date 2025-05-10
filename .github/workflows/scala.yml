@@ -16,9 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up Java and sbt
-        uses: coursier/setup-action@v1
+        uses: actions/setup-java@v4
         with:
-          jvm: corretto:11.0.27.6.1
-          apps: sbt
+          distribution: 'corretto'
+          java-version: '11'
+          cache: 'sbt'
       - name: Compile code
         run: sbt clean compile
